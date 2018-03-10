@@ -1,0 +1,13 @@
+if test -f $1
+then
+    while true do
+        read -p "Do you really want to delete file [Y/n]: " ans
+    	case $ans in
+    		Y ) rm $1; echo "File deleted!"; break;;
+    		n ) exit;;
+    		* ) echo "Wrong answer! Please, answer Y or n ('yes' and 'no')";;
+    	esac
+    done
+else
+    echo "There is no such file!"
+fi
